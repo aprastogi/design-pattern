@@ -3,14 +3,12 @@ package com.practice.behavioral.strategy;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShoppingCart {
+public class CartService {
 
     List<Item> items;
-    Strategy paymentStrategy;
 
-    public ShoppingCart(Strategy strategy){
+    public CartService(){
         items = new ArrayList<>();
-        this.paymentStrategy = strategy;
     }
 
     public void addItem(Item item) {
@@ -27,10 +25,5 @@ public class ShoppingCart {
             sum += item.getPrice();
         }
         return sum;
-    }
-
-    public void pay(){
-        int amount = calculateTotal();
-        paymentStrategy.pay(amount);
     }
 }
