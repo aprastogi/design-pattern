@@ -7,8 +7,8 @@ public class ChainofResponsibilityMain {
         VP vp = new VP();
         CEO ceo = new CEO();
 
-        director.setSucccesor(vp);
-        vp.setSucccesor(ceo);
+        director.setSuccessor(vp);
+        vp.setSuccessor(ceo);
 
         Request request = new Request(RequestType.CONFERENCE, 500);
         director.handleRequest(request);

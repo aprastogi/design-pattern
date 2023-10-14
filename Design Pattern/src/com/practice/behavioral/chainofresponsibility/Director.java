@@ -8,7 +8,7 @@ public class Director extends Handler {
             System.out.println("Director can approve this");
         }
         else{
-            succcesor.handleRequest(request);
+            successor.handleRequest(request);
         }
     }
 }
