@@ -12,8 +12,7 @@ public class IteratorMain {
 
         Iterator<String> iterator = new ListIterator(browserHistory);
         while(iterator.hasNext()){
-            System.out.println(iterator.current());
-            iterator.next();
+            System.out.println(iterator.next());
         }
     }
 }
