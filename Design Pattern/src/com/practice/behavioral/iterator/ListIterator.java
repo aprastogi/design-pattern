@@ -1,12 +1,12 @@
 package com.practice.behavioral.iterator;
 
 
-public class ListIterator implements Iterator<String>{
+public class ListIterator<T> implements Iterator<T>{
 
-    BrowserHistory browserHistory;
+    BrowserHistory<T> browserHistory;
     int index;
 
-    public ListIterator(BrowserHistory browserHistory){
+    public ListIterator(BrowserHistory<T> browserHistory){
         this.browserHistory = browserHistory;
         index = 0;
     }
@@ -17,7 +17,7 @@ public class ListIterator implements Iterator<String>{
     }
 
     @Override
-    public String next() {
+    public T next() {
         return browserHistory.getUrlList().get(index++);
     }
 }

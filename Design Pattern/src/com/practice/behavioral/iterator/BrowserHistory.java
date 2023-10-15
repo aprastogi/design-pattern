@@ -3,23 +3,23 @@ package com.practice.behavioral.iterator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BrowserHistory {
+public class BrowserHistory<T> {
 
-    private final List<String> urlList;
+    private final List<T> urlList;
 
     public BrowserHistory() {
         this.urlList = new ArrayList<>();
     }
 
-    public void push(String url){
+    public void push(T url){
         this.urlList.add(url);
     }
 
-    public String pop(){
+    public T pop(){
         return urlList.remove(urlList.size() -1);
     }
 
-    public List<String> getUrlList(){
+    public List<T> getUrlList(){
         return this.urlList;
     }
 }
