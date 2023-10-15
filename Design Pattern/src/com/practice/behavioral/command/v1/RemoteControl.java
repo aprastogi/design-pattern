@@ -9,9 +9,12 @@ public class RemoteControl {
 
     private final List<ICommand> commands;
 
-    public RemoteControl(AirConditioner ac){
-        this.ac = ac;
+    public RemoteControl(){
         this.commands = new ArrayList<>();
+    }
+
+    public void pairWithAc(AirConditioner ac){
+        this.ac = ac;
     }
 
     public void setCommands(ICommand commands){
@@ -21,6 +24,9 @@ public class RemoteControl {
     public void pressButton(ICommand command){
        if(!commands.contains(command)){
            throw new RuntimeException("Not a valid command");
+       }
+       if(this.ac == null){
+           throw new RuntimeException("This remote is not yet paired with AC");
        }
        command.execute(ac);
     }
