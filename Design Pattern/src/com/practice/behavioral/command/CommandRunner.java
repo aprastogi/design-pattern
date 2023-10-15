@@ -2,11 +2,11 @@ package com.practice.behavioral.command;
 
 import java.util.List;
 
-public class CommondRunner {
+public class CommandRunner {
 
    List<CommandExecutor> executorList;
 
-   public CommondRunner(List<CommandExecutor> executorList){
+   public CommandRunner(List<CommandExecutor> executorList){
       this.executorList = executorList;
    }
 
