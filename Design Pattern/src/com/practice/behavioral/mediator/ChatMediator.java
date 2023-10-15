@@ -1,7 +1,7 @@
 package com.practice.behavioral.mediator;
 
 public interface ChatMediator {
-    void sendMessage(String message, User user);
+    void sendMessage(User user, String message);
 
-    void registerUser(User user);
+    void register(User user, ChatClient chatClient);
 }
