@@ -11,7 +11,8 @@ public class Main {
         remoteControl.setCommands(onACCommand);
         remoteControl.setCommands(offACCommand);
 
-        AirConditioner ac = new AirConditioner(remoteControl);
+        AirConditioner ac = new AirConditioner();
+        ac.setRemoteControl(remoteControl);
         remoteControl.pairWithAc(ac);
 
         remoteControl.pressButton(onACCommand);

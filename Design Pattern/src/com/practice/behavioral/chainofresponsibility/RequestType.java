@@ -1,5 +1,5 @@
 package com.practice.behavioral.chainofresponsibility;
 
 public enum RequestType {
-    CONFERENCE,PURCHASE;
+    BILL, PERMISSION, HIRE, ACQUIRE_COMPANY;
 }

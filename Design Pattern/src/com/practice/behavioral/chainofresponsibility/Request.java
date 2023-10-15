@@ -1,20 +1,15 @@
 package com.practice.behavioral.chainofresponsibility;
 
 public class Request {
+    private final String name;
+    private final RequestType type;
 
-    private final RequestType requestType;
-    private final float amount;
-
-    public Request(RequestType requestType, float amount){
-        this.requestType = requestType;
-        this.amount = amount;
+    public Request(String name, RequestType type) {
+        this.name = name;
+        this.type = type;
     }
 
-    public RequestType getRequestType() {
-        return this.requestType;
-    }
-
-    public float getAmount(){
-        return this.amount;
+    public RequestType getType() {
+        return type;
     }
 }

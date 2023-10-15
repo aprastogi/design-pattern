@@ -10,7 +10,7 @@ public class IteratorMain {
 
         System.out.println("Deleted : " + browserHistory.pop());
 
-        Iterator<String> iterator = new ListIterator<>(browserHistory);
+        Iterator<String> iterator = browserHistory.createIterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }

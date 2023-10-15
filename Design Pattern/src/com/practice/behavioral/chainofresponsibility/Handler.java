@@ -1,12 +1,10 @@
 package com.practice.behavioral.chainofresponsibility;
 
 public abstract class Handler {
-
-    protected Handler successor;
-
-    public void setSuccessor(Handler successor){
-        this.successor = successor;
-    }
+    protected Handler next;
 
     public abstract void handleRequest(Request request);
+
+    public abstract void setNext(Handler next);
+
 }

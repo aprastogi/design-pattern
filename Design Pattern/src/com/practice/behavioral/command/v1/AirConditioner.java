@@ -4,7 +4,7 @@ public class AirConditioner {
 
     RemoteControl remoteControl;
 
-    public AirConditioner(RemoteControl remoteControl){
+    public void setRemoteControl(RemoteControl remoteControl){
         this.remoteControl = remoteControl;
     }
 

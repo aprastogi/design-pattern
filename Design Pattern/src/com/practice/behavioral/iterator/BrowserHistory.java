@@ -22,4 +22,8 @@ public class BrowserHistory<T> {
     public List<T> getUrlList(){
         return this.urlList;
     }
+
+    public Iterator<T> createIterator(){
+        return new ListIterator<>(this);
+    }
 }
