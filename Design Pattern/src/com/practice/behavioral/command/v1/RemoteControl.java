@@ -1,26 +1,27 @@
 package com.practice.behavioral.command.v1;
 
-import java.util.Stack;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RemoteControl {
 
-    private  ICommand command;
-    Stack<ICommand> commandHistory;
+    AirConditioner ac;
 
-    public void setCommand(ICommand command){
-        this.command = command;
-        this.commandHistory = new Stack<>();
+    private final List<ICommand> commands;
+
+    public RemoteControl(AirConditioner ac){
+        this.ac = ac;
+        this.commands = new ArrayList<>();
     }
 
-    public void pressButton(){
-        command.execute();
-        commandHistory.push(command);
+    public void setCommands(ICommand commands){
+        this.commands.add(commands);
     }
 
-    public void undo(){
-        if(!commandHistory.isEmpty()) {
-            ICommand command = commandHistory.pop();
-            command.undo();
-        }
+    public void pressButton(ICommand command){
+       if(!commands.contains(command)){
+           throw new RuntimeException("Not a valid command");
+       }
+       command.execute(ac);
     }
 }

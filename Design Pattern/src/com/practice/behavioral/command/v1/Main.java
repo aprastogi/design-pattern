@@ -4,11 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
         AirConditioner ac = new AirConditioner();
-        RemoteControl remoteControl = new RemoteControl();
-        remoteControl.setCommand(new TurnOnACCommand(ac));
-        remoteControl.pressButton();
-        remoteControl.setCommand(new TurnOffACCommand(ac));
-        remoteControl.pressButton();
-        remoteControl.undo();
+        RemoteControl remoteControl = new RemoteControl(ac);
+        TurnOnACCommand onACCommand = new TurnOnACCommand();
+        TurnOffACCommand offACCommand = new TurnOffACCommand();
+
+        remoteControl.setCommands(onACCommand);
+        remoteControl.setCommands(offACCommand);
+
+        remoteControl.pressButton(onACCommand);
+        remoteControl.pressButton(offACCommand);
     }
 }

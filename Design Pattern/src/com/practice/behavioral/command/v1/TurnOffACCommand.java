@@ -2,19 +2,8 @@ package com.practice.behavioral.command.v1;
 
 public class TurnOffACCommand implements ICommand{
 
-    AirConditioner ac;
-
-    public TurnOffACCommand(AirConditioner ac){
-        this.ac = ac;
-    }
-
     @Override
-    public void execute() {
+    public void execute(AirConditioner ac) {
         ac.turnOff();
-    }
-
-    @Override
-    public void undo() {
-        ac.turnOn();
     }
 }
