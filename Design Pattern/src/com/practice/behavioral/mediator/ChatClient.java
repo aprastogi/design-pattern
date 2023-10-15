@@ -2,17 +2,21 @@ package com.practice.behavioral.mediator;
 
 public class ChatClient {
 
-    public static void main(String[] args) {
-        ChatMediator chatMediator = new ChatMediatorImpl();
-        User apoorv = new User(chatMediator, "apoorv");
-        User ishan  = new User(chatMediator, "ishan");
-        User kedar  = new User(chatMediator, "kedar");
+    ChatMediator chatMediator;
 
-        chatMediator.registerUser(apoorv);
-        chatMediator.registerUser(ishan);
-        chatMediator.registerUser(kedar);
+    public ChatClient(ChatMediator chatMediator){
+        this.chatMediator = chatMediator;
+    }
 
-        apoorv.send("Good Morning Folks");
+    public void register(User user){
+        chatMediator.register(user, this);
+    }
 
+    public void send(User user, String message){
+        chatMediator.sendMessage(user, message);
+    }
+
+    public void receive(User sender, String message, User user) {
+        System.out.println("[" + sender.name + "] " + user.name + " : Received Message: " + message);
     }
 }
