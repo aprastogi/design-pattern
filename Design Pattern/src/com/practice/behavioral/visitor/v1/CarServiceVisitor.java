@@ -1,4 +1,4 @@
-package com.practice.behavioral.visitor;
+package com.practice.behavioral.visitor.v1;
 
 public interface CarServiceVisitor {
     void visit(Door door);
