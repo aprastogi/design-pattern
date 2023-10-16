@@ -1,11 +1,11 @@
 package com.practice.behavioral.observer;
 
-public class MobileAlertObserverImpl implements NotificationAlertObserver{
+public class SMSAlertObserverImpl implements NotificationAlertObserver{
 
     String userName;
     StockObservable observable;
 
-    public MobileAlertObserverImpl(String userName, StockObservable observable) {
+    public SMSAlertObserverImpl(String userName, StockObservable observable) {
         this.userName = userName;
         this.observable = observable;
     }
